@@ -19,6 +19,15 @@
 }
 
 /*GENERAL*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+}
 
 .clear {
   clear: both;
@@ -53,7 +62,6 @@ h3 {
   font-family: "Raleway", sans-serif;
   letter-spacing: 6px;
   text-transform: uppercase;
-
 }
 
 h2 {
@@ -70,13 +78,6 @@ ul,
 ol {
   list-style: none;
 }
-
-a:hover {
-  color: rgb(232, 195, 185) !important;
-  text-decoration: none;
-}
-
-
 
 /*EFFECTS*/
 
@@ -264,99 +265,7 @@ a:hover {
   padding-top: 100px;
 }
 
-/* SKILLS*/
 
-.skills h5 {
-  font-size: 10px;
-  color: black;
-  letter-spacing: 4px;
-  text-align: left;
-  margin: 2px;
-}
-
-.progress {
-  height: 12%;
-  background: white;
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  background: rgb(249, 221, 211);
-  border-radius: 5px;
-  padding-left: 10px;
-}
-
-/* LANGUAGES*/
-
-.languages-progress {
-  height: 13%;
-  width: 50%;
-  background: #ddd;
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
-
-.languages h5 {
-  font-size: 10px;
-  color: black;
-  letter-spacing: 4px;
-  text-align: left;
-  margin: 2px;
-}
-
-.heading-skills {
-  text-align: center;
-}
-
-/* EXPERIENCE*/
-
-.experience {
-  padding: 0 20px;
-  margin-bottom: 30px;
-}
-
-#experience-heading {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.timeline-heading a {
-  text-decoration: none;
-  color: black;
-  font-size: 11px;
-  font-family: "Raleway", sans-serif;
-}
-
-
-
-.timeline-panel {
-  text-align: center;
-  margin: 30px;
-}
-
-.timeline-heading h3 {
-  margin-top: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.timeline-heading h4 {
-  color: black;
-  font-size: 11px;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-}
-
-/* EDUCATION*/
-
-.education {
-  padding: 0 20px;
-  margin-bottom: 30px;
-}
-
-#education-heading {
-  text-align: center;
-}
 
 /* PORTFOLIO */
 .portfolio {
@@ -364,14 +273,6 @@ a:hover {
   margin-bottom: 100px;
 }
 
-#portfolio h6 {
-  font-size: 11px;
-  letter-spacing: 3px;
-}
-
-.portfolio img:hover {
-  filter: opacity(70%);
-}
 
 #portfolio-heading {
   text-align: center;
@@ -380,21 +281,90 @@ a:hover {
 .portfolio img {
   max-width: 100%;
   height: auto;
-
+  transition: opacity ease-out 250ms;
+  opacity: 1;
 }
 
+.portfolio-item:hover {
+opacity: 0.2;
+ }
 
-#portfolio h3 {
-  font-size: 15px;
+ .portfolio-img:hover {
+    opacity: 0.2;
+    } 
+
+.portfolio-text a {
+  font-size: 11px;
+  font-weight: 900;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 4px;
+}
+.portfolio-text h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 4px;
+}
+.portfolio-text h6 {
+  font-size: 11px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 4px;
 }
 
 .portfolio-item {
+  max-width: 320px;
+  position: relative;
   display: inline-block;
   margin: 40px;
+  background: black;
 }
 
+.portfolio-item::before,
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    top: 1.25em;
+    bottom: 1.25em;
+    left: 1.25em;
+    right: 1.25em;
+    opacity: 1;
+    transition: transform ease-out 250ms;
+  }
+  
+  .portfolio-item::before {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    transform: scale(0,1);
+  }
+  
+  .portfolio-item::after {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transform: scale(1,0);
+  }
+  
+  .portfolio-item:hover::before {
+    transform: scale(1.05, 1);
+  }
+  
+  .portfolio-item:hover::after {
+    transform: scale(1, 1.05);
+  }
+
 .portfolio-text {
-  margin: 20px;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+  font-weight: bold;
+}
+
+.portfolio-item:hover .portfolio-text{
+  opacity: 1;
 }
 
 
