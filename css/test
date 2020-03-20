@@ -1,0 +1,184 @@
+/*RESPONSIVE*/
+
+@media (max-width: 321px) {
+
+  #heading h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .overlay a {
+    font-size: 25px;
+  }
+
+  body {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  #landing-page {
+    height: 70vh;
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+
+  #white-div h1 {
+    font-size: 50px;
+  }
+
+  #heading h3 {
+    font-size: 15px;
+    margin-top: 0;
+    padding-left: 0px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  #cv-download a {
+    font-size: 50px;
+  }
+
+  #heading h1 {
+    font-size: 80px;
+    justify-content: center;
+    margin-top: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  /*FOOTER*/
+
+  body {
+    font-size: 11px;
+  }
+
+  footer p,
+  a {
+    font-size: 15px;
+  }
+
+  footer h6 {
+    font-size: 20px;
+  }
+
+  #footer-info {
+    font-size: 15px;
+    padding: 20px;
+    float: none;
+    border-right: none;
+    width: auto;
+  }
+
+  #footer-media {
+    font-size: 15px;
+    padding: 20px;
+    float: none;
+    width: auto;
+  }
+
+  h2 {
+    font-size: 50px;
+    padding: 20px 20px;
+  }
+
+  .landing-page h3 {
+    font-size: 15px;
+    padding-left: 0px;
+  }
+
+  .landing-page h1 {
+    font-size: 50px;
+  }
+
+  #cv-download a {
+    font-size: 40px;
+  }
+
+  #about-text {
+    font-size: 11px;
+  }
+}
+
+
+@media (min-width: 765px) {
+
+  #landing-page {
+    padding-top: 200px;
+  }
+
+  #landing-page h1 {
+    font-size: 150px;
+  }
+
+  #landing-page h3 {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+
+  #cv-download a {
+    font-size: 120px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  #landing-page {
+    padding-top: 300px;
+    height: 70vh;
+  }
+
+  #landing-page h1 {
+    font-size: 200px;
+  }
+
+  #landing-page h3 {
+    font-size: 50px;
+  }
+}
+
+
+
+@media (min-width: 1026px) {
+  #about-text {
+    line-height: 3;
+  }
+
+  .about-photo img {
+    max-width: 50%;
+    height: auto;
+    padding-top: 100px;
+  }
+
+  #about-text {
+    line-height: 2;
+    padding: 40px;
+    float: right;
+    margin-top: 40px;
+    font-size: 12px;
+  }
+
+  #landing-page {
+    padding-top: 0px;
+    height: 100vh;
+  }
+
+  #landing-page h1 {
+    letter-spacing: 4px;
+    font-size: 250px;
+    margin-top: 30px;
+    text-align: left;
+    z-index: -100;
+  }
+
+  #cv-download a {
+    font-size: 200px;
+  }
+}
