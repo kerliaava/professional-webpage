@@ -8,26 +8,18 @@
 
 html{
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-  letter-spacing: 1px;
   background-color: rgb(205, 174, 162);
-  font-size: 11px;
   font-family: "Raleway", sans-serif;
-  text-align: block;
-  letter-spacing: 3px;
   margin: 0;
 }
 
 main {
-  position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-.clear {
-  clear: both;
 }
 
 ul,
@@ -38,10 +30,18 @@ ol {
 
 /*FONTS*/
 
-h3 {
-  font-family: "Raleway", sans-serif;
+.section_heading{
+  text-align: center;
   letter-spacing: 6px;
   text-transform: uppercase;
+  font-size: 3em;
+}
+
+h1 {
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-top: 70px;
+font-size: 4em;
 }
 
 /*preloader*/
@@ -84,7 +84,6 @@ h3 {
   transform: scale(0);
   opacity: 0;
   transition: 0.2s;
-
 }
 
 #scrollToTopButton.show {
@@ -115,7 +114,6 @@ h3 {
 #navigation_large_screen{
   text-align: right;
   padding-top: 50px;
-  
   padding-right: 50px;
 }
 
@@ -154,8 +152,7 @@ a #last_nav_item{
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 20px;
-  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
   color: #222222 !important;
   display: block;
   transition: 0.3s;
@@ -186,7 +183,11 @@ a #last_nav_item{
   justify-content: center;
   align-items: center;
   position: relative;
+}
 
+
+#heading h1 {
+  color: white;
 }
 
 #heading {
@@ -196,18 +197,11 @@ a #last_nav_item{
 }
 
 
-#heading h1 {
-  color: white;
-  letter-spacing: 5px;
-  text-transform: uppercase;
- margin-top: 70px;
- font-size: 50px;
-}
 
 #heading h1::after {
  content: 'Web dévelopment & UI design';
  text-transform: none;
- font-size: 20px;
+ font-size: 1.2rem;
  display: block;
  margin-top: 25px;
  font-weight: normal;
@@ -220,71 +214,85 @@ a #last_nav_item{
   right: 50%;
 }
 
-#cv-download {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 200px;
-}
-
-#cv-download a {
-  letter-spacing: 5px;
-  font-family: 'Bebas Neue', cursive;
-  font-size: 150px;
-  color: rgb(249, 221, 211);
-}
 
 /*INTRODUCTION*/
 
 #section_2{
-  position: relative;
   display: flex;
-  height: 100vh;
+  flex-direction: column;
   background-image: url(/images/bg.svg);
   background-size: cover;
-
-
+  justify-content: center;
+  align-items: center;
+  padding-top: 25em;
+  font-size: 0.75rem;
 }
 
 #introduction_1{
-  position: absolute;
-  top: 25%;
+  padding: 5em;
+  text-align: center;
+}
+
+#introduction_1 p{
+  padding-top: 5em;
+  
 }
 #introduction_2{
-  position: absolute;
-  bottom: 25%;
+  padding: 5em 5em 15em 5em;
+  text-align: center;
+}
+
+button {
+  padding: 0.75em 2.5em;
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgb(205, 174, 162);
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  
 }
 
 /* COMPETENCES */
 
 #competences{
-position: relative;
 display: flex;
 height: 100vh;
 }
 
 /*ABOUT ME */
+
+#about{
+  background-color: white;
+}
 #about-text {
   line-height: 2;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   margin-top: 40px;
-  font-family: 'Raleway', serif;
   letter-spacing: 3px;
+  font-size: 0.6rem;
 }
 
 #about-text a {
   display: inline-block;
   text-decoration: none;
-  color: rgb(97, 112, 86);
-  font-size: 12px;
+  color: black;
+  font-size: 0.75rem;
 }
 
 .timeline-body a {
   display: inline-block;
   text-decoration: none;
-  color: rgb(97, 112, 86);
-  font-size: 12px;
+  color: black;
+  font-size: 0.6rem;
 }
 
 #about-text a:hover {
@@ -294,13 +302,14 @@ height: 100vh;
 .about-photo img {
   max-width: 100%;
   height: auto;
-  padding-top: 100px;
 }
 
 /* PORTFOLIO */
 .portfolio {
-  text-align: center;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 #portfolio-heading {
@@ -343,11 +352,10 @@ opacity: 0.2;
 }
 
 .portfolio-item {
-  max-width: 320px;
   position: relative;
-  display: inline-block;
   margin: 40px;
   background: black;
+  width: fit-content;
 }
 
 .portfolio-item::before,
@@ -396,23 +404,36 @@ opacity: 0.2;
   opacity: 1;
 }
 
+/* SLOGAN */
+#cv-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+#cv-download a {
+  letter-spacing: 5px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 150px;
+  color: rgb(249, 221, 211);
+}
+
     /*CONTACT*/
-    .contact-wrapper {
-      display: flex;
-      align-items: center;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin: 60px 0;
+
+
+  #contact {
+   padding: 50% 5em;
+   background-image: url(/images/bg_contact.svg);
+   background-size: cover; 
   }
 
-  #contact-heading {
-      text-align: center;
+ #contact-heading {
+   text-align: center;
   }
 
-  .contact-container {
-      font-size: 12px;
-      background-image: url(/images/bg_contact.svg);
-      background-size: cover;
-      height: 100vh;
+.contact-container {
+      font-size: 12px;  
   }
 
   #contact-heading ul {
@@ -426,14 +447,6 @@ opacity: 0.2;
       font-size: 20px;
   }
 
-  #contact-heading li a {
-      color: grey;
-  }
-
-  #contact-heading li a:hover {
-      text-decoration: none;
-      color: rgb(46, 109, 125);
-  }
 
   input {
       line-height: normal;
@@ -460,8 +473,8 @@ opacity: 0.2;
   textarea {
       background: none;
       border: none;
-      border-bottom: solid 2px #474544;
-      color: #474544;
+      border-bottom: solid 1px black;
+      color: black;
       font-size: 1em;
       font-weight: 400;
       letter-spacing: 1px;
@@ -532,7 +545,6 @@ opacity: 0.2;
       color: #474544;
       cursor: pointer;
       display: inline-block;
-      font-family: "Helvetica", Arial, sans-serif;
       font-size: 0.875em;
       font-weight: bold;
       outline: none;
@@ -553,7 +565,7 @@ opacity: 0.2;
   a {
       text-decoration: none;
       /* takes away lined text*/
-      color: rgb(57, 61, 63);
+      color: black;
   }
 
   a:hover {
@@ -561,14 +573,7 @@ opacity: 0.2;
       color: rgb(46, 109, 125);
   }
 
-  h2 {
-      text-transform: uppercase;
-      margin: 40px 0;
-      text-align: center;
-      font-family: "Oswald", sans-serif;
-      font-size: 50px;
-      letter-spacing: 2px;
-  }
+  
 
 /*FOOTER*/
 
@@ -590,8 +595,7 @@ a {
   text-decoration: none;
   letter-spacing: 3px;
   display: block;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: lowercase;
+
 }
 
 footer h6 {
