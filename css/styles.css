@@ -616,3 +616,13 @@ footer h6 {
 
 }
 
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 100px){
+  #section_2{
+    flex-direction: row;
+    flex: 50%;
+}
+}
+
+
