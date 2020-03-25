@@ -1,139 +1,75 @@
-<!DOCTYPE html>
-<html>
+#navigation_large_screen{
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 50px;
+  }
+  
+  #navigation_large_screen a{
+    color: white;
+    font-size: 11px;
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 25px;
+  }
+  
+  a #last_nav_item{
+    margin-right: 0;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(205, 174, 162);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    line-height: 2;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #222222 !important;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    opacity: 0.7 !important;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  #white-background {
+    background-color: white;
+  }
 
-<head>
-    <title>Kerli Aava</title>
-    <link rel="icon" type="image/png" href="/images/logo.ico">
-    <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Montserrat:100,900|Raleway&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-</head>
-    <body>
-        <div id="loader">
-            <img src="https://media.giphy.com/media/M52wyuahvQfJK/giphy.gif" alt="">
-        </div>
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="overlay-content">
-                <a href="#about" onclick="closeNav()">About</a>
-                <a href="#skills" onclick="closeNav()">Skills</a>
-                <a href="#education-heading" onclick="closeNav()">Education</a>
-                <a href="#portfolio" onclick="closeNav()">Portfolio</a>
-                <a href="#footer" onclick="closeNav()">Contact</a>
-            </div>
-        </div>
-        <span style="font-size:40px;cursor:pointer;margin: 30px; color: rgb(240, 222, 203);"
-            onclick="openNav()">&#9776;</span>
-        <main class="content">
- <div class="container-fluid">
-    <div id="about-text" data-aos="fade-left">
-        <p>
-            I am a junior front-end developer passionate about code, design, and
-            lifelong learning. After 7 months of full immersion, intensive studies, research,
-            and
-            building sites with HTML5, CSS3, and Javascript, I am now determined to achieve
-            excellence, to deliver a positive contribution and to be part of an ambitious team.
-            <br>
-            Creative problem solving, and implementation of design solutions for enhanced user
-            experience is what fascinates me foremost in web development. It embodies an
-            exciting
-            combination of logic and creativity, enabling to take something abstract such as a
-            programming language and turn it into something tangible as a website or an
-            application.
-            <br>
-            I accord a great deal of importance to aesthetics, improvement, clean design and
-            understanding the logic behind a piece of code that I am about to implement. I am
-            self-disciplined, analytical, attentive to details, whilst imaginative, creative and
-            flexible. I am equally comfortable working in French or in English, in a team or
-            autonomously.
-            <br>
-            Besides coding, I love to get lost in places I have never been to, practice Ashtanga
-            yoga, read, dance and when I have the opportunity to do some scuba
-            diving.
-            <br>
-            If you are in search of a highly motivated junior developer to join your team, get
-            in <a target="_blank" href="mailto:kerliaava@gmail.com">contact</a> with me! I would
-            be
-            delighted.
-        </p>
-    </div>
-    <div class="container-fluid"> 
-      <div class="about-photo"> 
-            <img src="/images/photo2.JPG" alt="" /> 
-        </div> 
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <a href="#about" onclick="closeNav()">About</a>
+        <a href="#skills" onclick="closeNav()">Services</a>
+        <a href="#education-heading" onclick="closeNav()">Education</a>
+        <a href="#portfolio" onclick="closeNav()">Contact</a>
+        <a href="#footer" onclick="closeNav()">Contact</a>
     </div>
 </div>
-</main>
-<footer id="footer">
-    <div class="container-fluid">
-        <div class="footer-wrapper">
-            <h6>CONTACT</h6>
-            <a href="mailto:kerliaava@gmail.com" target="_blank">
-                email me</a>
-            <br>
-            <a target="_blank" href="https://www.linkedin.com/in/kerli-aava-4a961a88/">LINKEDIN</a>
-            <br />
-            <a href="https://www.instagram.com/kerliaava/" target="_blank">INSTAGRAM</a>
-            <br>
-            <a href="https://github.com/kerliaava" target="_blank">github</a>
-            <p>LOCATION: LILLE</p>
-            <p>MOBILE: 0664696395</p>
-
-        </div>
-    </div>
-</footer>
-<p id="copyright">© Kerli Aava 2019</p>
-</body>
-
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="/js/index.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-<script>
-AOS.init({
-    offset: 500,
-    duration: 1000
-});
-var rellax = new Rellax(".rellax");
-
-var textWrapper = document.querySelector('.ml16');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({
-        loop: true
-    })
-    .add({
-        targets: '.ml16 .letter',
-        translateY: [-100, 0],
-        easing: "easeOutExpo",
-        duration: 1400,
-        delay: (el, i) => 30 * i
-    }).add({
-        targets: '.ml16',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-    });
-
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-};
-</script>
-</body>
-
-</html>
+<span style="font-size:40px;cursor:pointer;margin: 30px; color:rgb(249, 221, 211);"
+    onclick="openNav()">&#9776;</span>
