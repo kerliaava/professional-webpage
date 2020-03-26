@@ -10,22 +10,20 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <header>
+    <h1 class="logo"></h1>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <nav>
-        <div class="burger-nav">
-            <div class="line-1"></div>
-            <div class="line-1"></div>
-            <div class="line-1"></div>
-        </div>
-        <ul class="nav-links"> 
-            <li> <a href="#">Services</a></li> 
-            <li> <a href="#">About</a></li> 
-            <li> <a href="#">Services</a></li> 
-            <li> <a href="#">Contact</a></li> 
-        </ul>
+      <ul>
+        <li><a href="#" onclick="closeNav()">Home</a></li>
+        <li><a href="#" onclick="closeNav()">About</a></li>
+        <li><a href="#" onclick="closeNav()">Blog</a></li>
+        <li><a href="#" onclick="closeNav()">Contact</a></li>
+      </ul>
     </nav>
-        
-    
-</header>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </header>
 <body>
     <div id="loader">
         <img src="https://media.giphy.com/media/M52wyuahvQfJK/giphy.gif" alt="">
@@ -236,18 +234,6 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 };
 </script>           
-
-    
-    
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
