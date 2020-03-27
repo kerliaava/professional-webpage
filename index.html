@@ -4,31 +4,34 @@
     <title>Kerli Aava</title>
     <link rel="icon" type="image/png" href="/images/logo.ico">
     <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Montserrat:100,900|Raleway&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.min.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<header>
-    <h1 class="logo"></h1>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <nav>
-      <ul>
-        <li><a href="#" onclick="closeNav()">Home</a></li>
-        <li><a href="#" onclick="closeNav()">About</a></li>
-        <li><a href="#" onclick="closeNav()">Blog</a></li>
-        <li><a href="#" onclick="closeNav()">Contact</a></li>
-      </ul>
-    </nav>
-    <label for="nav-toggle" class="nav-toggle-label">
-      <span></span>
-    </label>
-  </header>
+
 <body>
+    <header>
+        <h1 class="logo"></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+          <ul>
+            <li><a href="#" onclick="closeNav()">Home</a></li>
+            <li><a href="#" onclick="closeNav()">About</a></li>
+            <li><a href="#" onclick="closeNav()">Blog</a></li>
+            <li><a href="#" onclick="closeNav()">Contact</a></li>
+          </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+      </header>
+
     <div id="loader">
         <img src="https://media.giphy.com/media/M52wyuahvQfJK/giphy.gif" alt="">
     </div>
     <div></div>
+    <button id="scrollToTopButton" style="color: #222;" onclick="scrollToTop(300,3);">up</button>
+
     <main class="content">
     <section id="landing-page">
         <div id="heading">
@@ -38,36 +41,39 @@
                 <path d="M6.5 6.5H162.931V173.5H6.5V6.5Z" stroke="white" stroke-width="13"/>
                 </svg>       
             <h1>Lorem ipsum dolor sit amet</h1>
-            <svg id="arrow" width="44" height="53" viewBox="0 0 44 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg id="arrow" width="44" height="53" viewBox="0 0 44 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="0.529454" y1="0.67197" x2="22.3773" y2="25.805" stroke="white"/>
                 <line x1="0.453405" y1="13.7385" x2="22.3013" y2="38.8716" stroke="white"/>
                 <line x1="0.377355" y1="26.805" x2="22.2252" y2="51.9381" stroke="white"/>
                 <line x1="21.6987" y1="25.8716" x2="43.5465" y2="0.738482" stroke="white"/>
                 <line x1="21.6226" y1="38.9381" x2="43.4705" y2="13.805" stroke="white"/>
                 <line x1="21.5466" y1="52.0046" x2="43.3944" y2="26.8715" stroke="white"/>
-            </svg>          
+            </svg>           -->
         </div>
     </section>
+
     <section id="section_2">       
-        <header id="introduction_1">
+        <div id="introduction_1">
         <h1>KERLI AAVA</h1>
-        <h3>Développeur web Freelance</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam fugit veritatis beatae possimus velit dolorem voluptatum totam. Architecto asperiores modi aspernatur nisi qui fuga, eum ea, animi provident enim velit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam fugit veritatis beatae possimus velit dolorem voluptatum totam. Architecto asperiores modi aspernatur nisi qui fuga, eum ea, animi provident enim velit.</p>
-        </header>                
+        </div>              
         <div id="introduction_2">
         <h1>Je développe vos sites personnels & entreprise blogs e-commerce,pour Web & Mobile </h1>
         <button> Tell me about your project </button>
         </div>                      
     </section>
+
     <section id="competences">
         <h2 class="section_heading">Competences</h2>
     </section> 
+
     <h2 class="section_heading">About me</h2>
     <section id="about">
         <div class="about-photo"> 
             <img src="/images/photo2.JPG" alt="" /> 
         </div> 
-        <div id="about-text" data-aos="fade-left">
+         <div id="about-text"> 
+        <!-- <div id="about-text" data-aos="fade-left"> -->
             <p>
                 I am a junior front-end developer passionate about code, design, and
                 lifelong learning. After 7 months of full immersion, intensive studies, research,
@@ -99,9 +105,9 @@
             </p>
         </div>
     </section>
-    <h2 class="section_heading">portfolio</h2>
+
     <section id="portfolio" class="portfolio">
-           
+        <h2 class="section_heading">portfolio</h2>  
          <div class="portfolio-item">
                     <img src="images/work4.png" alt="channel-expertise" class="portfolio-img" />
                     <div class="portfolio-text">
@@ -135,12 +141,12 @@
                     </div>
                 </div>
     </section>
+
     <section id="cv-download">
         <a href="/docs/CV_Kerli_AAVA.pdf" class="ml16">Download my CV</a>
     </section>
-    <button id="scrollToTopButton" style="color: #222;" onclick="scrollToTop(300,3);">up</button>
+
     <section id="contact">
-        <div class="contact-container">
             <div id="contact-heading">
                 <h2 class="section_heading">Contact</h2>
                 <ul>
@@ -150,6 +156,7 @@
                     </li>
                 </ul>
             </div>
+            <div class="contact-container">
             <form action="/ajax/email" method="post" id="contact_form">
                 <div class="name">
                     <label for="name"></label>
@@ -178,6 +185,7 @@
             </form>
         </div>
     </section>
+
     <footer id="footer">
         <div class="footer-wrapper">
             <a href="mailto:kerliaava@gmail.com" target="_blank">
@@ -190,6 +198,7 @@
             <p>LOCATION: LILLE</p>
         </div>
     </footer>
+
 </main>
 </footer>
 <p id="copyright">© Kerli Aava 2019</p>                      
