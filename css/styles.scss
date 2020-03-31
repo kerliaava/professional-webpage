@@ -3,7 +3,8 @@
 
 $colors: (
     background: #ebd8b8,
-    background-dark: #060c18,
+    dark: #702600,
+    accent: #060c18,
 );
 
  $padding:15px;
@@ -185,8 +186,13 @@ header {
     margin-top: 0;
     height: 100vh;
     padding: 0 $side-margin-large;
-    background-color: color(background-dark);
+    background-color: color(dark);
 
+}
+
+#competences {
+    background-color: color(background-dark);
+    height: 100vh;
 }
 
 
