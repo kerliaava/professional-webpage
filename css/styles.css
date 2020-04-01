@@ -30,11 +30,25 @@ a {
 
 /*FONTS*/
 h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: lighter;
   color: #060c18;
   letter-spacing: 10px;
   font-family: "Libre Caslon Display", sans-serif;
+}
+
+h2 {
+  font-family: "Libre Caslon Display", sans-serif;
+  letter-spacing: 10px;
+  font-weight: normal;
+  font-size: 5rem;
+}
+
+p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  line-height: 2rem;
+  text-align: justify;
 }
 
 /*PRELOADER*/
@@ -75,12 +89,11 @@ header {
   position: fixed;
   z-index: 999;
   width: 100%;
-  background-color: #ebd8b8;
   padding-right: 40px;
 }
 
 header nav {
-  background-color: #ebd8b8;
+  background-color: transparent;
 }
 
 header nav ul {
@@ -89,19 +102,17 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  margin: 20px;
+  margin: 30px;
   text-transform: uppercase;
-  font-size: 12px;
   font-weight: bold;
   letter-spacing: 3px;
+  font-size: 11px;
 }
 
 /* LANDING-PAGE*/
 #landing-page {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -110,16 +121,16 @@ header nav ul li {
           align-items: end;
   -webkit-transition: ease;
   transition: ease;
-  height: 90vh;
+  height: 100vh;
   overflow: auto;
   padding: 0 40px;
   text-align: center;
-  margin-top: 8vh;
+  padding-top: 8vh;
 }
 
 #landing-page h1::after {
   content: 'Freelance web developer';
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 7px;
   display: block;
   font-weight: bold;
@@ -131,33 +142,16 @@ header nav ul li {
   letter-spacing: 5px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 12px;
-}
-
-.middle-section {
-  height: 80vh;
-}
-
-.middle-section .dp-image {
-  width: 50%;
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-.middle-section .dp-image img {
-  max-width: 100%;
-  height: auto;
-  z-index: 999;
+  font-size: 10px;
 }
 
 #section-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "headline-1  headline-1" "paragraph-1 paragraph-1" "paragraph-2 paragraph-2" "photo photo" "headline-2 headline-2";
+  grid-row-gap: 10rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -165,10 +159,240 @@ header nav ul li {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
-  padding-top: 0;
   margin-top: 0;
+  padding: 10rem 40px;
+  background-color: #702600;
+  color: #ebd8b8;
+}
+
+@media only screen and (min-width: 800px) {
+  #section-2 {
+        grid-template-areas: "photo ." "headline-1 headline-1" "paragraph-1 paragraph-2" "headline-2 headline-2";
+    grid-column-gap: 10rem;
+  }
+}
+
+#section-2 h2 {
+  color: #ebd8b8;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+
+#section-2 #headline-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: headline-1;
+}
+
+#section-2 #headline-1 ::after {
+  content: 'Some text as ususal';
+  font-size: 2rem;
+  letter-spacing: 7px;
+  display: block;
+  font-family: lato;
+  text-transform: lowercase;
+  margin: 30px 0;
+  font-family: "Libre Caslon Display", sans-serif;
+  padding-left: 30px;
+}
+
+#section-2 #headline-2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: headline-2;
+  text-align: right;
+  margin: 10vh 0;
+  color: #ebd8b8;
+}
+
+#section-2 #paragraph-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: paragraph-1;
+}
+
+#section-2 #paragraph-2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: paragraph-2;
+}
+
+#section-2 img {
+  width: 100%;
+  height: auto;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: photo;
+}
+
+#competences {
   height: 100vh;
-  padding: 0 40px;
-  background-color: #060c18;
+  display: -ms-grid;
+  display: grid;
+  padding: 10vh 0;
+}
+
+#competences .competence-intro {
+  margin: 40px;
+}
+
+#competences .competence-intro h3 {
+  padding-left: 30px;
+  text-transform: uppercase;
+  margin: 30px 0;
+  letter-spacing: 5px;
+}
+
+#competences .competence-intro p {
+  margin: 0 30px;
+  font-size: 12px;
+  padding-right: 40px;
+}
+
+/*CONTACT*/
+#contact {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  background-size: cover;
+  height: 90vh;
+}
+
+#contact #contact-heading {
+  text-align: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+#contact #contact-heading ul {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#contact #contact-heading li {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+#contact .contact-container {
+  margin: 30px;
+}
+
+#contact .contact-container input {
+  line-height: normal;
+}
+
+#contact .contact-container textarea {
+  overflow: auto;
+}
+
+#contact .contact-container form {
+  padding: 37.5px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#contact .contact-container .email {
+  float: right;
+  width: 45%;
+}
+
+#contact .contact-container input[type="text"],
+#contact .contact-container [type="email"],
+#contact .contact-container select,
+#contact .contact-container textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 1px #060c18;
+  color: #060c18;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0.75em;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#contact .contact-container input[type="text"]:focus,
+#contact .contact-container [type="email"]:focus,
+#contact .contact-container textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0;
+}
+
+#contact .contact-container .message {
+  float: none;
+}
+
+#contact .contact-container .name {
+  float: left;
+  width: 45%;
+}
+
+#contact .contact-container .telephone {
+  width: 100%;
+}
+
+#contact .contact-container textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+
+#contact .contact-container ::-webkit-input-placeholder {
+  color: #702600;
+}
+
+#contact .contact-container :-moz-placeholder {
+  color: #702600;
+  opacity: 1;
+}
+
+#contact .contact-container ::-moz-placeholder {
+  color: #702600;
+  opacity: 1;
+}
+
+#contact .contact-container :-ms-input-placeholder {
+  color: #702600;
+}
+
+#contact .contact-container #form_button {
+  background: none;
+  border: solid 1px #060c18;
+  color: #060c18;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 40px;
+}
+
+#contact .contact-container #form_button:hover {
+  background: #702600;
+  opacity: 0.7;
+}
+
+footer {
+  height: 50vh;
+  background-color: #702600;
 }
 /*# sourceMappingURL=styles.css.map */

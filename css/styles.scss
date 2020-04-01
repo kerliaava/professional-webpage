@@ -2,10 +2,12 @@
 
 
 $colors: (
-    background: #ebd8b8,
-    dark: #702600,
+    background-light: #ebd8b8,
+    background-dark: #702600,
     accent: #060c18,
 );
+
+
 
  $padding:15px;
  $borders: 15px;
@@ -15,20 +17,18 @@ $colors: (
  $paragraph-font: 'Lato', sans-serif;
  $headline-font: 'Libre Caslon Display', sans-serif;
  
-
+ @mixin responsive ($breakpoint){
+    @if $breakpoint == 'desktop' {
+        @media only screen and (min-width: 800px) {
+            @content
+        };
+    }   
+    } 
 
 @function color ($color-name){
     @return map-get($colors, $color-name)
 }
   
-$desktop: 800px;
-
-@mixin desktop {
-    @media (min-width: #{$desktop}) {
-        @content;
-    }
-}
-
 
 /*GENERAL*/
 *{
@@ -40,7 +40,7 @@ $desktop: 800px;
   
 body {
   
-    background-color: color(background);
+    background-color: color(background-light);
     font-family: $paragraph-font;
   }
   
@@ -57,17 +57,32 @@ main {
   a{
     text-decoration: none;
     color: #333;
+    
   }
 
 
 /*FONTS*/ 
 
 h1{
-    font-size: 10rem;
+    font-size: 8rem;
     font-weight: lighter;
     color: #060c18;
     letter-spacing: 10px;
     font-family: $headline-font ;
+}
+
+h2{
+    font-family: $headline-font;
+    letter-spacing: 10px;
+    font-weight: normal;
+    font-size: 5rem;
+}
+
+p{
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: $line-height;
+    text-align: justify;
 }
  
 /*PRELOADER*/
@@ -75,7 +90,7 @@ h1{
 #loader {
     height: 100%;
     width: 100%;
-    background-color: color(background);
+    background-color: color(background-light);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -102,45 +117,45 @@ header {
     position: fixed;
     z-index: 999;
     width: 100%;
-    background-color: color(background);
     padding-right: $side-margin-large;
   
          nav {
-         background-color: color(background);
+         background-color: transparent;
 
          ul{
-          text-align: center; 
+          text-align: center;
+
 
           li {
               display: inline-block;
-              margin: 20px;
+              margin: 30px;
               text-transform: uppercase;
-              font-size: 12px;
               font-weight: bold;
               letter-spacing: 3px;
+              font-size: 11px;
           }
          }
          }
               
           }
   
-      /* LANDING-PAGE*/
+/* LANDING-PAGE*/
 
 #landing-page {
     display: grid;
-    grid-template-rows: 1fr 1fr;
     justify-content: center;
     align-items: end;
     transition: ease;
-    height: 90vh;
+    height: 100vh;
     overflow: auto;
     padding: 0 $side-margin-large;
     text-align: center;
-    margin-top: 8vh ;
+    padding-top: 8vh ;
+ 
 
     h1::after{
         content: 'Freelance web developer';
-        font-size: 13px;
+        font-size: 10px;
         letter-spacing: 7px;
         display: block;
         font-weight: bold;
@@ -152,50 +167,264 @@ header {
         letter-spacing: 5px;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 10px;
+      }
     }
 
     
-}
-
-.middle-section{
-    height: 80vh;
-
-
-    .dp-image{
-        width: 50%;
-        margin-left: 10%;
-        margin-top: 10%;
-    }
-
-    .dp-image img{
-        max-width: 100%;
-            height: auto;
-            z-index: 999;
-      }
-}
 
 
 #section-2{
-    display: flex;
-    flex-direction: column;
+    
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "headline-1  headline-1"
+    "paragraph-1 paragraph-1"
+    "paragraph-2 paragraph-2"
+    "photo photo"
+    "headline-2 headline-2";
+    grid-row-gap: 10rem;
     justify-content: center;
     align-items: center;
     text-align: left;
-    padding-top:0;
     margin-top: 0;
-    height: 100vh;
-    padding: 0 $side-margin-large;
-    background-color: color(dark);
+    padding: 10rem $side-margin-large;
+    background-color: color(background-dark);
+    color: color(background-light);
 
+    @include responsive('desktop'){
+        grid-template-areas: 
+        "photo ."
+        "headline-1 headline-1"
+        "paragraph-1 paragraph-2"
+        "headline-2 headline-2";  
+        grid-column-gap:10rem;
+    }
+
+
+    h2{
+        color: color(background-light);
+        text-transform: uppercase;
+        font-size: 5rem;
+
+    }
+
+    #headline-1 {
+        grid-area: headline-1;
+
+    ::after{
+        content:'Some text as ususal';
+        font-size: 2rem;
+        letter-spacing: 7px;
+        display: block;
+        font-family: lato;
+        text-transform: lowercase;
+        margin: $side-margin-small 0;
+        font-family: $headline-font;
+        padding-left: $side-margin-small;
+    }
 }
+
+    #headline-2 {
+        grid-area: headline-2;
+        text-align: right;
+        margin: 10vh 0;
+        color: color(background-light);
+    }
+
+    #paragraph-1{
+        grid-area: paragraph-1;
+    }
+
+    #paragraph-2{
+        grid-area: paragraph-2;
+      
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        grid-area: photo;
+        
+    } 
+    } 
+
 
 #competences {
-    background-color: color(background-dark);
     height: 100vh;
+    display: grid;
+    padding: 10vh 0;
+
+    .competence-intro{
+        margin: $side-margin-large;
+
+        h3{
+           padding-left: $side-margin-small;
+            text-transform: uppercase;
+            margin: $side-margin-small 0;
+            letter-spacing: 5px;
+        }
+       
+        p{
+            margin:0  $side-margin-small;
+            font-size: 12px;
+            padding-right: $side-margin-large;
+        }
+        
+    }
 }
 
+/*CONTACT*/
+  
+  
+#contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    background-size: cover; 
+    height: 90vh;
+   
+    #contact-heading {
+       text-align: center;
+        align-self: end;
+   
+       ul {
+           text-align: center;
+           margin: 40px 0;
+       }
+     
+       li {
+           display: inline-block;
+           text-decoration: none;
+           margin-right: 30px;
+           font-size: 20px;
+       }
+      }
+   
+    .contact-container {
+       margin: $side-margin-small;  
+   
+       input {
+           line-height: normal;
+       }
+     
+       textarea {
+           overflow: auto;
+       }
+     
+       form {
+           padding: 37.5px;
+           margin: 10px 0;
+           text-align: center;
+       }
+     
+       .email {
+           float: right;
+           width: 45%;
+       }
+     
+       input[type="text"],
+       [type="email"],
+       select,
+       textarea {
+           background: none;
+           border: none;
+           border-bottom: solid 1px color(accent);
+           color: color(accent);
+           margin: 0em 0 1.875em 0;
+           padding: 0 0 0.875em 0.75em;
+           text-transform: uppercase;
+           font-family: $paragraph-font;
+           width: 100%;
+           box-sizing: border-box;
+           transition: all 0.3s;
+       }
+     
+       input[type="text"]:focus,
+       [type="email"]:focus,
+       textarea:focus {
+           outline: none;
+           padding: 0 0 0.875em 0;
+       }
+     
+       .message {
+           float: none;
+       }
+     
+       .name {
+           float: left;
+           width: 45%;
+       }
+     
+       .telephone {
+           width: 100%;
+       }
+     
+       textarea {
+           line-height: 150%;
+           height: 150px;
+           resize: none;
+           width: 100%;
+       }
+     
+       ::-webkit-input-placeholder {
+           color: color(background-dark);
+       }
+     
+       :-moz-placeholder {
+           color: color(background-dark);
+           opacity: 1;
+       }
+     
+       ::-moz-placeholder {
+           color: color(background-dark);
+           opacity: 1;
+       }
+     
+       :-ms-input-placeholder {
+           color: color(background-dark);
+       }
+     
+       #form_button {
+           background: none;
+           border: solid 1px color(accent);
+           color: color(accent);
+           cursor: pointer;
+           display: inline-block;
+           font-size: 0.875em;
+           font-weight: bold;
+           outline: none;
+           padding: 20px 40px;
+           text-transform: uppercase;
+           -webkit-transition: all 0.3s;
+           -moz-transition: all 0.3s;
+           -ms-transition: all 0.3s;
+           -o-transition: all 0.3s;
+           transition: all 0.3s;
+           margin: 40px;
+       }
+     
+       #form_button:hover {
+           background: color(background-dark);
+           opacity: 0.7;
+       }
+     
+     } 
+   }
 
+   footer{
+       height: 50vh;
+       background-color: color(background-dark);
+   }
+
+   
+
+
+   
+
+
+ 
+ 
 
  
 

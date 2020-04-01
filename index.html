@@ -46,20 +46,70 @@
 
     </section>
 
-    <div class="middle-section">
-
-        
-    </div>
-
 
     <section id="section-2"> 
-          
+
+        <h2 id="headline-1">Web development</h2>
+        <p id="paragraph-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consectetur asperiores distinctio minima qui. Illum optio, in eius aliquid possimus fugiat quasi vel sint amet quis, omnis ad molestiae fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consectetur asperiores distinctio minima qui. Illum optio, in eius aliquid possimus fugiat quasi vel sint amet quis, omnis ad molestiae fugit.</p>
+        <p id="paragraph-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sint mollitia earum, aut quos tenetur fugiat error excepturi adipisci nemo. In eius adipisci voluptates vitae autem nostrum ullam omnis a! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consectetur asperiores distinctio minima qui. Illum optio, in eius aliquid possimus fugiat quasi vel sint amet quis, omnis ad molestiae fugit.</p>  
+        <img id="self-portrait" src="images/me.jpg" alt="">   
+        <h1 id="headline-2">DESIGN AND SOME OTHER TEXT</h1>
+        
 
     </section>
 
     <section id="competences">
 
+        <div class="competence-intro">
+
+            <h1>Competences</h1>
+            <h3>here I will write some extra text, text and words</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nisi perferendis amet repellendus mollitia consequatur eveniet. Et commodi quas harum fugiat tempore, nostrum corrupti atque sequi aut maiores aliquid inventore!</p>
+
+        </div>
+
     </section> 
+
+    <section id="portfolio">
+
+    </section>
+
+    <section id="contact">
+        <div id="contact-heading">
+            <h1 class="section_heading">LETS WORK TOGETHER</h1>
+        </div>
+        <div class="contact-container">
+        <form action="/ajax/email" method="post" id="contact_form">
+            <div class="name">
+                <label for="name"></label>
+                <input type="text" placeholder="nom et prenom" name="name" id="name_input" required />
+            </div>
+            <div class="email">
+                <label for="email"></label>
+                <input type="email" placeholder="email" name="email" id="email_input" required />
+            </div>
+            <div class="telephone">
+                <label for="name"></label>
+                <input type="text" placeholder="portable" name="telephone" id="telephone_input" required />
+            </div>
+
+            <div class="message">
+                <label for="message"></label>
+                <textarea name="message" placeholder="message" id="message_input" cols="30" rows="5"
+                    required></textarea>
+            </div>
+            <div class="submit">
+                <button type="submit" id="form_button"
+                    onclick="swal.fire('Merci!','We will get back to you soon', 'success')">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer></footer>
+
 
 
 
